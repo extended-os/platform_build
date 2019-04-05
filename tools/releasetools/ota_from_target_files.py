@@ -824,25 +824,24 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   #Print ASCII
-  script.Print("**************************************************");
-  script.Print("**              .--.                            **");
-  script.Print("**             : .; :                           **");
-  script.Print("**             :    : .--.  .--. .---.          **");
-  script.Print("**             : :: :' .; :`._-.': .; `         **");
-  script.Print("**             :_;:_;`.__.'`.__.': ._.'         **");
-  script.Print("**                               : :            **");
-  script.Print("**                               :_;            **");
-  script.Print("** .--.        .-.               .-.         .-.**");
-  script.Print("**: .--'      .' `.              : :         : :**");
-  script.Print("**: `;  .-.,-.`. .'.--. ,-.,-. .-' : .--.  .-' :**");
-  script.Print("**: :__ `.  .' : :' '_.': ,. :' .; :' '_.'' .; :**");
-  script.Print("**`.__.':_,._; :_;`.__.':_;:_;`.__.'`.__.'`.__.'**");
-  script.Print("**************************************************");
-  script.Print("*                By:-TeamAEX                     *");
-  script.Print("**************************************************");
-  script.Print(" ")
+     script.Print("----------------------------------------------");
+  script.Print("     Android Open Source Extended Project");
+  script.Print("               Created by batch 2");
+  script.Print("              Anis Noorudheen P");
+  script.Print("                  Arsha P P");
+  script.Print("              Iris Anna Peter");
+  script.Print("                 Ameera V A");
+  script.Print("    Guided by : Anjaly Krishnan, AP ECE");
+  script.Print("----------------------------------------------");
+  script.Print(" Android version: %s"%(android_version));
+  script.Print(" Build id: %s"%(build_id));
+  script.Print(" Build date: %s"%(build_date));
+  script.Print(" Security patch: %s"%(security_patch));
+  script.Print(" Device: %s"%(device));
+  script.Print("----------------------------------------------");
+  device_specific.FullOTA_InstallBegin()
   script.AppendExtra("sleep (2);")
-  script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+  script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));  ")
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
