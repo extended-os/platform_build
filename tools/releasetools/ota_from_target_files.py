@@ -877,9 +877,9 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print("");
     script.Print(" Root status: Disabled");
     script.Print("");
-    script.Print(" Build ID: %s"%(buildidn));
+    script.Print(" Build ID: Official Build"):
     script.Print("");
-    script.Print(" Build date: %s"%(buildday));
+    script.Print(" Build date: April 5 2019"):
     script.Print(" **************** Hardware *****************");
     script.Print(" Device codename: %s"%(device));
     script.Print("");
