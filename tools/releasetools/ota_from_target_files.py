@@ -824,7 +824,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   #Print ASCII
-     script.Print("----------------------------------------------");
+  
   script.Print("     Android Open Source Extended Project");
   script.Print("               Created by batch 2");
   script.Print("              Anis Noorudheen P");
@@ -833,13 +833,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("                 Ameera V A");
   script.Print("    Guided by : Anjaly Krishnan, AP ECE");
   script.Print("----------------------------------------------");
-  script.Print(" Android version: %s"%(android_version));
-  script.Print(" Build id: %s"%(build_id));
-  script.Print(" Build date: %s"%(build_date));
-  script.Print(" Security patch: %s"%(security_patch));
-  script.Print(" Device: %s"%(device));
-  script.Print("----------------------------------------------");
-  device_specific.FullOTA_InstallBegin()
+  #script.Print(" Android version: %s"%(android_version));
+  #script.Print(" Build id: %s"%(build_id));
+  #script.Print(" Build date: %s"%(build_date));
+  #script.Print(" Security patch: %s"%(security_patch));
+  #script.Print(" Device: %s"%(device));
+  #script.Print("----------------------------------------------");
+ # device_specific.FullOTA_InstallBegin()
   script.AppendExtra("sleep (2);")
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));  ")
   device_specific.FullOTA_InstallBegin()
@@ -856,8 +856,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  if target_info.GetBuildProp("ro.extended.display.version") is not None:
-    buildid = target_info.GetBuildProp("ro.extended.display.version")
+  if target_info.GetBuildProp("ro.aosep.display.version") is not None:
+    buildid = target_info.GetBuildProp("ro.aosep.display.version")
     buildidn = target_info.GetBuildProp("ro.build.id")
     buildday = target_info.GetBuildProp("ro.build.date")
     securep = target_info.GetBuildProp("ro.build.version.security_patch")
@@ -865,26 +865,26 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     androidver = target_info.GetBuildProp("ro.build.version.release")
     manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
     sdkver = target_info.GetBuildProp("ro.build.version.sdk")
-    script.Print(" **************** Software *****************");
-    script.Print(" OS version: %s"%(buildid));
-    script.Print("");
-    script.Print(" Android version: %s"%(androidver));
-    script.Print("");
-    script.Print(" Security patch: %s"%(securep));
-    script.Print("");
-    script.Print(" SDK version: %s"%(sdkver));
-    script.Print("");
-    script.Print(" Root status: Disabled");
-    script.Print("");
-    script.Print(" Build ID: Official Build"):
-    script.Print("");
-    script.Print(" Build date: April 5 2019"):
-    script.Print(" **************** Hardware *****************");
-    script.Print(" Device codename: %s"%(device));
-    script.Print("");
-    script.Print(" Manufacturer: %s"%(manufacturer));
-    script.Print("");
-    script.Print(" *******************************************");
+   # script.Print(" **************** Software *****************");
+    #script.Print(" OS version: %s"%(buildid));
+    #script.Print("");
+    #script.Print(" Android version: %s"%(androidver));
+    #script.Print("");
+    #script.Print(" Security patch: %s"%(securep));
+    #script.Print("");
+    #script.Print(" SDK version: %s"%(sdkver));
+    #script.Print("");
+    #script.Print(" Root status: Disabled");
+    #script.Print("");
+    #script.Print(" Build ID: Official Build"):
+    #script.Print("");
+    #script.Print(" Build date: April 5 2019"):
+    #script.Print(" **************** Hardware *****************");
+    #script.Print(" Device codename: %s"%(device));
+    #script.Print("");
+    #script.Print(" Manufacturer: %s"%(manufacturer));
+    #script.Print("");
+    #script.Print(" *******************************************");
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
